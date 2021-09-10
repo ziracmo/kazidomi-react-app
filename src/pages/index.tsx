@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ItemCard from '../components/item-card';
+import ProductCard from '../components/product-card';
+import ProductModal from '../components/product-modal';
 import { Meta } from '../layout/Meta';
 import { Product } from '../models/product';
 import { Main } from '../templates/Main';
@@ -38,12 +39,14 @@ const Index = () => {
           </div>
         </div>
         <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          <ItemCard product={product} />
-          <ItemCard product={product} />
-          <ItemCard product={product} />
-          <ItemCard product={product} />
-          <ItemCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
+          <ProductCard product={product} />
         </section>
+
+        <ProductModal product={product} />
       </section>
     </Main>
   );

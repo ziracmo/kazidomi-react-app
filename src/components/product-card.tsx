@@ -1,29 +1,37 @@
 import React from 'react';
 
 import { Product } from '../models/product';
-import { showToast } from '../services/toasts';
-import Rating from './rating';
 
-type State = {};
 type Props = {
   product: Product;
+  addToCartClick?: (product: Product) => {};
+  productClick?: (product: Product) => {};
 };
 
-export default class ItemCard extends React.Component<Props, State> {
+export default class ProductCard extends React.Component<Props, {}> {
   constructor(props: Props) {
     super(props);
 
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.handleProductClick = this.handleProductClick.bind(this);
   }
 
   handleAddToCart() {
-    showToast('Item added to your cart');
+    if (this.props.addToCartClick) {
+      this.props.addToCartClick(this.props.product);
+    }
+  }
+
+  handleProductClick() {
+    if (this.props.productClick) {
+      this.props.productClick(this.props.product);
+    }
   }
 
   render() {
     const { product } = this.props;
     return (
-      <div className="p-4">
+      <div className="p-4" onClick={this.handleProductClick}>
         <div className="p-6 rounded-lg shadow bg-green-50 hover:shadow-lg duration-200 hover:cursor-pointer hover:bg-green-100">
           <img
             className="md:w-50 w-32 m-auto object-cover object-center mb-6"
@@ -33,9 +41,11 @@ export default class ItemCard extends React.Component<Props, State> {
           <h3 className="text-base text-gray-900 font-medium title-font mb-2">
             {product.title}
           </h3>
-          <Rating rate={product.rating.rate} />
+          <h4 className="text-base text-gray-700 font-medium mb-2">
+            {product.price} €
+          </h4>
           <button className="btn" onClick={this.handleAddToCart}>
-            Add to Cart
+            Add to cart
           </button>
         </div>
       </div>
