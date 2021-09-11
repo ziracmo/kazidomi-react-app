@@ -16,11 +16,16 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
+    "axios": "^0.21.4",
     "next": "^11.1.2",
+    "next-redux-wrapper": "^7.0.4",
     "next-seo": "^4.26.0",
     "noty": "^3.2.0-beta-deprecated",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0",
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {

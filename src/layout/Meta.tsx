@@ -10,6 +10,7 @@ type IMetaProps = {
   canonical?: string;
 };
 
+// Base Meta description for our website (SEO and responsive)
 const Meta = (props: IMetaProps) => {
   const router = useRouter();
 

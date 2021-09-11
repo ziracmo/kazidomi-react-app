@@ -12,3 +12,8 @@ export interface Product {
   image: string;
   rating: Rating;
 }
+
+export interface CartProduct {
+  product: Product;
+  total: number;
+}

@@ -1,9 +1,12 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { ShoppingCartIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import Link from 'next/link';
 
-const navigation = [{ name: 'Home', href: '#', current: true }];
+import CartButton from './cart-button';
+
+const navigation = [{ name: 'Home', href: '/', current: true }];
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -11,7 +14,7 @@ function classNames(...classes: string[]) {
 
 const Navbar = () => {
   return (
-    <Disclosure as="nav" className="shadow">
+    <Disclosure as="nav" className="shadow fixed w-screen bg-white">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -43,34 +46,28 @@ const Navbar = () => {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'text-green-400'
-                            : 'hover:text-green-400',
-                          'px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                      <Link href={item.href} key={item.name} passHref={true}>
+                        <span
+                          className={classNames(
+                            item.current
+                              ? 'text-green-400'
+                              : 'hover:text-green-400',
+                            'px-3 py-2 text-sm font-medium'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          {item.name}
+                        </span>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className=" p-1 rounded-full hover:text-green-400"
-                >
-                  <span className="sr-only">View cart</span>
-                  <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                <CartButton />
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                <Menu as="div" className="ml-6 relative">
                   <div>
                     <Menu.Button className="flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-400 focus:ring-white">
                       <span className="sr-only">Open user menu</span>
@@ -92,17 +89,12 @@ const Navbar = () => {
                   >
                     <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 shadow-lg py-1 bg-white ring-1 ">
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? 'bg-gray-100' : '',
-                              'block px-4 py-2 text-sm text-gray-700'
-                            )}
-                          >
-                            Sign out
-                          </a>
-                        )}
+                        <a
+                          href="#"
+                          className={'block px-4 py-2 text-sm text-black'}
+                        >
+                          Sign out
+                        </a>
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
@@ -118,10 +110,8 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current
-                      ? 'bg-gray-900 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    item.current ? 'text-green-400' : ' hover:text-green-400',
+                    'block px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
