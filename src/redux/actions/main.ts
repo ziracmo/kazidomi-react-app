@@ -1,38 +1,55 @@
 import { Product } from '../../models/product';
 import { showToast } from '../../services/toasts';
-import { Types } from '../types';
+import { AuthTypes, ProductTypes } from '../types';
+
+// Products Actions
 
 export const addToCart = (product: Product) => (dispatch: any) => {
   showToast('Product added to cart !', 'success');
   dispatch({
-    type: Types.ADD_TO_CART,
+    type: ProductTypes.ADD_TO_CART,
     product,
   });
 };
 
 export const removeFromCart = (product: Product) => (dispatch: any) => {
   dispatch({
-    type: Types.REMOVE_FROM_CART,
+    type: ProductTypes.REMOVE_FROM_CART,
     product,
   });
 };
 
 export const deleteFromCart = (product: Product) => (dispatch: any) => {
   dispatch({
-    type: Types.DELETE_FROM_CART,
+    type: ProductTypes.DELETE_FROM_CART,
     product,
   });
 };
 
 export const openProductModal = (product: Product) => (dispatch: any) => {
   dispatch({
-    type: Types.OPEN_PRODUCT_MODAL,
+    type: ProductTypes.OPEN_PRODUCT_MODAL,
     product,
   });
 };
 
 export const closeProductModal = () => (dispatch: any) => {
   dispatch({
-    type: Types.CLOSE_PRODUCT_MODAL,
+    type: ProductTypes.CLOSE_PRODUCT_MODAL,
+  });
+};
+
+// Auth Actions
+
+export const login = (token: string) => (dispatch: any) => {
+  dispatch({
+    type: AuthTypes.LOGIN,
+    token,
+  });
+};
+
+export const logout = () => (dispatch: any) => {
+  dispatch({
+    type: AuthTypes.LOGOUT,
   });
 };

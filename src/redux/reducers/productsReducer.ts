@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 
 import { CartProduct, Product } from '../../models/product';
-import { Types } from '../types';
+import { ProductTypes } from '../types';
 
 type State = {
   products: CartProduct[];
@@ -19,7 +19,7 @@ const productsReducer = (
   action: AnyAction
 ): State => {
   switch (action.type) {
-    case Types.ADD_TO_CART: {
+    case ProductTypes.ADD_TO_CART: {
       // check if the product id exists in the cart
       const { products } = state;
       const productIndex = products.findIndex(
@@ -60,7 +60,7 @@ const productsReducer = (
       // if we don't find the product, just return the current state
       return { ...state };
     }
-    case Types.REMOVE_FROM_CART: {
+    case ProductTypes.REMOVE_FROM_CART: {
       const { products } = state;
       // Get the product index
       const productIndex = products.findIndex(
@@ -99,7 +99,7 @@ const productsReducer = (
       // if we don't find the product, just return the current state
       return { ...state };
     }
-    case Types.DELETE_FROM_CART: {
+    case ProductTypes.DELETE_FROM_CART: {
       const { products } = state;
       // get the product index
       const productIndex = products.findIndex(
@@ -125,14 +125,14 @@ const productsReducer = (
       // if we don't find the product, just return the current state
       return { ...state };
     }
-    case Types.OPEN_PRODUCT_MODAL: {
+    case ProductTypes.OPEN_PRODUCT_MODAL: {
       return {
         ...state,
         selectedProduct: action.product,
         modalOpen: true,
       };
     }
-    case Types.CLOSE_PRODUCT_MODAL: {
+    case ProductTypes.CLOSE_PRODUCT_MODAL: {
       return {
         ...state,
         selectedProduct: null,
