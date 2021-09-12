@@ -18,10 +18,7 @@ const authService = {
       // if we have an error we present it to the user
       if (data.data.status === 'Error') {
         res.status = LoginResponseStatus.Error;
-        showToast(
-          `An error happened during login : ${data.data.message}`,
-          'error'
-        );
+        showToast(`An error happened during login : ${data.data.msg}`, 'error');
       }
       res.token = data.data;
       return res;

@@ -101,6 +101,7 @@ const Navbar = (props: Props) => {
                       <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 shadow-lg py-1 bg-white ring-1 ">
                         <Menu.Item>
                           <span
+                            onClick={props.logout()}
                             className={'block px-4 py-2 text-sm text-black'}
                           >
                             Sign out
@@ -118,7 +119,7 @@ const Navbar = (props: Props) => {
                   >
                     Sign in
                   </span>
-                </Link>{' '}
+                </Link>
               </div>
             </div>
           </div>

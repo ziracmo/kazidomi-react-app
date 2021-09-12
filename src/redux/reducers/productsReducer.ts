@@ -76,7 +76,7 @@ const productsReducer = (
           if (cartProduct.total === 0) {
             // Delete it from the cart
             products.splice(productIndex, 1);
-            const total = state.total - cartProduct.total;
+            const total = state.total - 1;
 
             return {
               ...state,
