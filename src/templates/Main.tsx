@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 
+import Footer from '../components/footer';
 import ProductModal from '../components/modals/product-modal';
 import Navbar from '../components/navbar/navbar';
 
@@ -13,10 +14,11 @@ const Main = (props: IMainProps) => (
     {props.meta}
     <Navbar />
 
-    <div className="mx-auto pt-5 px-5">
+    <div className="mx-auto pt-5 px-5 min-h-screen">
       <div className="py-5 text-xl content">{props.children}</div>
     </div>
     <ProductModal />
+    <Footer />
   </div>
 );
 

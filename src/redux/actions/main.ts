@@ -1,7 +1,9 @@
 import { Product } from '../../models/product';
+import { showToast } from '../../services/toasts';
 import { Types } from '../types';
 
 export const addToCart = (product: Product) => (dispatch: any) => {
+  showToast('Product added to cart !', 'success');
   dispatch({
     type: Types.ADD_TO_CART,
     product,

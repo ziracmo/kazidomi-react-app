@@ -28,6 +28,16 @@ a:hover {
   @apply text-xs inline-flex items-center font-bold uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-full;
 }
 
+.swiper-button-prev, .swiper-button-next {
+  color: rgba(5, 150, 105, 1) !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgba(5, 150, 105, 1) !important;
+}
+
+
+
 .aligner {
   display: flex;
   align-items: center;

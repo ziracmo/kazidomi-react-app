@@ -1,11 +1,6 @@
 const Index = () => (
   <section className="text-gray-600 body-font">
     <div className="image-container container px-5 py-24 mx-auto flex flex-wrap items-center justify-center">
-      <style jsx>{`
-        .image-container {
-          background: url('https://cdn.pixabay.com/photo/2017/08/19/19/43/nature-2659682_1280.jpg');
-        }
-      `}</style>
       <div className="lg:w-3/5 lg:pr-0 pr-0">
         <h1 className="title-font font-bold text-5xl text-white">
           Slow-carb next level shoindcgoitch ethical authentic, poko scenester
