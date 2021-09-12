@@ -1,14 +1,130 @@
-# Boilerplate and Starter for Next JS 11+, Tailwind CSS 2.0 and TypeScript [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
+# React application made for Kazidomi technical test 🍃
 
-<p align="center">
-  <a href="https://creativedesignsguru.com/demo/Nextjs-Boilerplate/"><img src="public/assets/images/nextjs-starter-banner.png?raw=true" alt="Next js starter banner"></a>
-</p>
+Base project use a boiler plate to integrate NextJS, React and TailwindCSS (https://github.com/ixartz/Next-js-Boilerplate.git) 
 
-🚀 Boilerplate and Starter for Next.js, Tailwind CSS and TypeScript ⚡️ Made with developer experience first: Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged, VSCode, Netlify, PostCSS, Tailwind CSS.
+Redux, SwiperJS and NotiJS has been added during the development of the project.
 
-Clone this project and use it to create your own [Next.js](https://nextjs.org) project. You can check a [Next js templates demo](https://creativedesignsguru.com/demo/Nextjs-Boilerplate/).
+- Redux : https://redux.js.org/ (State management)
+- Noty : https://ned.im/noty/#/ (Toast)
+- Swiper : https://swiperjs.com/swiper-api (Swipe and carousel)
 
-### Features
+## Requirements
+
+- Node.js and npm
+
+## Getting started
+
+Run the following command on your local environment:
+
+```
+git clone https://github.com/ziracmo/kazidomi-react-app.git
+cd kazidomi-react-app
+npm install
+```
+
+Then, you can run locally in development mode with live reload:
+
+```
+npm run dev
+```
+
+Open http://localhost:3000 with your favorite browser to see your project.
+
+```
+.
+├── README.md                # README file
+├── next.config.js           # Next JS configuration
+├── public                   # Public folder
+│   └── assets
+│       └── images           # Image used by default template
+├── src
+│   ├── layout               # Atomic layout components
+│   ├── pages                # Next JS pages
+│   ├── styles               # PostCSS style folder with Tailwind
+│   ├── templates            # Default template
+│   └── utils                # Utility folder
+├── tailwind.config.js       # Tailwind CSS configuration
+└── tsconfig.json            # TypeScript configuration
+```
+
+## Deploy to production
+
+You can see the results locally in production mode with:
+
+```
+$ npm run build
+$ npm run start
+```
+
+The generated HTML and CSS files are minified (built-in feature from Next js). It will also removed unused CSS from [Tailwind CSS](https://tailwindcss.com).
+
+You can create an optimized production build with:
+
+```
+npm run build-prod
+```
+
+Now, your blog is ready to be deployed. All generated files are located at `out` folder, which you can deploy with any hosting service.
+
+## Instructions given
+
+### 1 - Login :
+
+- Use the following APIs: Endpoint: https://fakestoreapi.com/auth/login Method: POST ✅ 
+
+- INPUT : 
+```json
+ {
+     "username": "mor_2314",
+     "password": "83r5^_"
+}
+```
+
+- OUTPUT : 
+```json
+ {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+}
+```
+
+### 2 - A landing page (main page) that has the following specification :
+
+- List all products, API will return 20 products ✅ 
+- Display image, title, price and add to cart button for each product ✅ 
+- When the user click on add to cart button, the item should be added to the cart (store the
+cart in the client side, you may use local storage, state, redux, ...etc) ✅ 
+- When the user clicks on the product, open a modal that displays product image, title and
+description. ✅ 
+- Electronics section, use carousel to display the products ✅ 
+   - Use the following API to get products list: Endpoint: https://fakestoreapi.com/products Method: GET ✅  
+   - Use the following API to get carousel items: Endpoint: https://fakestoreapi.com/products/category/electronics Method: GET ✅ 
+
+### 3 - Cart page that has the following specifications :
+- List all shopping cart items. ✅ 
+- Display item image, title and quantity for each item  ✅ 
+- User should be able to increase/decrease item quantity ✅ 
+- User should be able to remove items from the shopping cart ✅ 
+- Display total cart price ✅ 
+
+### Note :
+
+- Use your design talents to make it beautiful and seamless
+- This has to be done using ReactJS latest version.
+- Bounce: Feel free to add any enchantment to the app(validation, error handling, loading
+indicator, ..etc) as you see fit. If you are adding extra functionality or assumptions make
+sure you state these in the email, when you submit.
+- If you run out of time, please submit whatever you have completed.
+- Share the source code on Github.
+
+### Added outside the instructions :
+
+- Skeletons on the home page
+- Default template on the cart page
+- Toast using Noty (Login error and production added to cart)
+- Application is fully responsive
+- Error management in the login form
+
+## Features given by the boilerplate
 
 Developer experience first:
 
@@ -40,117 +156,8 @@ Built-in feature from Next.js:
 - SEO-friendly
 - 🚀 Production-ready
 
-### Nextless.js SaaS Boilerplate
-
-Building your SaaS product faster with [Nextless JS SaaS Boilerplate](https://nextlessjs.com).
-
-[![Nextless React SaaS Boilerplate](https://nextlessjs.com/assets/images/hero-image.png)](https://nextlessjs.com)
-
-### Premium Themes
-
-| [Green Nextjs Landing Page Template](https://creativedesignsguru.com/landing-green-modern-nextjs-theme/) | [Purple Saas Nextjs Theme](https://creativedesignsguru.com/landing-purple-modern-react-theme/) |
-| --- | --- |
-| [![Green Nextjs Landing Page Template](https://creativedesignsguru.com/assets/images/themes/landing-green-modern-nextjs-theme-xs.png)](https://creativedesignsguru.com/landing-green-modern-nextjs-theme/) | [![Blue Landing Page Nextjs Theme](https://creativedesignsguru.com/assets/images/themes/landing-blue-modern-nextjs-theme-xs.png)](https://creativedesignsguru.com/landing-blue-modern-react-theme/) |
-
-Find more [Nextjs Themes](https://creativedesignsguru.com/category/nextjs/).
-
-### Requirements
-
-- Node.js and npm
-
-### Getting started
-
-Run the following command on your local environment:
-
-```
-git clone --depth=1 https://github.com/ixartz/Next-js-Boilerplate.git my-project-name
-cd my-project-name
-npm install
-```
-
-Then, you can run locally in development mode with live reload:
-
-```
-npm run dev
-```
-
-Open http://localhost:3000 with your favorite browser to see your project.
-
-```
-.
-├── README.md                # README file
-├── next.config.js           # Next JS configuration
-├── public                   # Public folder
-│   └── assets
-│       └── images           # Image used by default template
-├── src
-│   ├── layout               # Atomic layout components
-│   ├── pages                # Next JS pages
-│   ├── styles               # PostCSS style folder with Tailwind
-│   ├── templates            # Default template
-│   └── utils                # Utility folder
-├── tailwind.config.js       # Tailwind CSS configuration
-└── tsconfig.json            # TypeScript configuration
-```
-
-### Customization
-
-You can easily configure Next js Boilerplate. Please change the following file:
-
-- `public/apple-touch-icon.png`, `public/favicon.ico`, `public/favicon-16x16.png` and `public/favicon-32x32.png`: your website favicon, you can generate from https://favicon.io/favicon-converter/
-- `src/styles/main.css`: your CSS file using Tailwind CSS
-- `src/utils/AppConfig.ts`: configuration file
-- `src/templates/Main.tsx`: default theme
-
-### Deploy to production
-
-You can see the results locally in production mode with:
-
-```
-$ npm run build
-$ npm run start
-```
-
-The generated HTML and CSS files are minified (built-in feature from Next js). It will also removed unused CSS from [Tailwind CSS](https://tailwindcss.com).
-
-You can create an optimized production build with:
-
-```
-npm run build-prod
-```
-
-Now, your blog is ready to be deployed. All generated files are located at `out` folder, which you can deploy with any hosting service.
-
-### Deploy to Netlify
-
-Clone this repository on own GitHub account and deploy to Netlify:
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Next-js-Boilerplate)
-
-### Deploy to Vercel
-
-Deploy this Next JS Boilerplate on Vercel in one click:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fixartz%2FNext-js-Boilerplate)
-
 ### VSCode information (optional)
 
 If you are VSCode users, you can have a better integration with VSCode by installing the suggested extension in `.vscode/extension.json`. The starter code comes up with Settings for a seamless integration with VSCode. The Debug configuration is also provided for frontend and backend debugging experience.
 
 Pro tips: if you need a project wide type checking with TypeScript, you can run a build with <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Mac.
-
-### Contributions
-
-Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
-
-### License
-
-Licensed under the MIT License, Copyright © 2020
-
-See [LICENSE](LICENSE) for more information.
-
----
-
-Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
-
-[![Sponsor Next JS Boilerplate](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://www.buymeacoffee.com/ixartz)
