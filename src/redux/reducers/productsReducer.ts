@@ -71,18 +71,20 @@ const productsReducer = (
         const cartProduct = products[productIndex];
         if (cartProduct) {
           cartProduct.total -= 1;
-          const total = state.total - 1;
 
           // If the total of this product in cart is zero, we delete it from the cart
           if (cartProduct.total === 0) {
             // Delete it from the cart
-            products.splice(productIndex);
+            products.splice(productIndex, 1);
+            const total = state.total - cartProduct.total;
+
             return {
               ...state,
               products,
               total,
             };
           }
+          const total = state.total - 1;
           // Update it the the global state products
           products[productIndex] = cartProduct;
           // Update the total of products in states
@@ -105,14 +107,19 @@ const productsReducer = (
       );
 
       if (productIndex !== -1) {
-        // Delete it from the cart
-        products.splice(productIndex);
-        const total = state.total - 1;
-        return {
-          ...state,
-          products,
-          total,
-        };
+        const product = products[productIndex];
+
+        if (product) {
+          // Delete it from the cart
+          products.splice(productIndex, 1);
+          const total = state.total - product.total;
+
+          return {
+            ...state,
+            products,
+            total,
+          };
+        }
       }
 
       // if we don't find the product, just return the current state

@@ -1,4 +1,4 @@
-const Login = () => (
+const Index = () => (
   <section className="text-gray-600 body-font">
     <div className="image-container container px-5 py-24 mx-auto flex flex-wrap items-center justify-center">
       <style jsx>{`
@@ -52,4 +52,4 @@ const Login = () => (
   </section>
 );
 
-export default Login;
+export default Index;

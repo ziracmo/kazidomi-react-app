@@ -52,7 +52,7 @@ const CartProductListItem = (props: Props) => {
           Delete
         </h5>
         <h4 className="font-bold absolute bottom-0 right-0">
-          {product.price * total} €
+          {(product.price * total).toFixed(2)} €
         </h4>
       </div>
     </div>

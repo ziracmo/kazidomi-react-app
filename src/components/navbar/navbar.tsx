@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import CartButton from './cart-button';
 
@@ -13,6 +14,8 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <Disclosure as="nav" className="shadow fixed w-screen bg-white">
       {({ open }) => (
@@ -49,7 +52,7 @@ const Navbar = () => {
                       <Link href={item.href} key={item.name} passHref={true}>
                         <span
                           className={classNames(
-                            item.current
+                            router.pathname === item.href
                               ? 'text-green-400'
                               : 'hover:text-green-400',
                             'px-3 py-2 text-sm font-medium'
